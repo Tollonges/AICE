@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AICE: Artificial, Intelligence, Communication, and Encyclopedia</title>
+    <style>
+        body {
+            background-color: #add8e6; /* Pastel Blue */
+            color: #000080; /* Blue */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #000080; /* Blue */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000080; /* Blue */
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #myButton {
+            background-color: #000080;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        #myButton:hover {
+            background-color: #003366;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to AICE: Artificial, Intelligence, Communication, and Encyclopedia!</h1>
+        <p>Explore the fascinating world of artificial intelligence, communication technologies, and vast knowledge from various fields.</p>
+
+        <h2>What We Offer:</h2>
+        <ul>
+            <li>Improve your vocabulary</li>
+            <li>Expand your knowledge of unfamiliar words</li>
+            <li>Enjoyable learning experience and meet new people</li>
+        </ul>
+
+        <h2>Navigation:</h2>
+        <ul>
+            <li><a href="/chat">Go to Chat</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+
+        <button id="myButton">Start your journey</button>
+    </div>
+
+    <!-- Link your JavaScript files here if you have any -->
+    <script>
+        // JavaScript code
+        document.getElementById("myButton").addEventListener("click", function() {
+            alert("Button Clicked!");
+        });
+    </script>
+     <script src="script.js"></script>
+</body>
+
+</html>
+
+{% endblock %}
