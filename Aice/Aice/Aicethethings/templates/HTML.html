@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AICE main chat</title>
+
+    <style>
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #3498db; /* Blue background */
+            color: #ffffff; /* White text */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #85c1e9; /* Pastel blue container background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Chat area styles */
+        .chat-area {
+            height: 400px;
+            overflow-y: scroll;
+            padding: 20px;
+            border-bottom: 1px solid #5dade2; /* Slightly darker pastel blue border */
+        }
+
+        /* Message styles */
+        .message {
+            margin-bottom: 20px;
+        }
+
+        .message .user {
+            font-weight: bold;
+            color: #2980b9; /* Darker blue text */
+        }
+
+        .message .text {
+            background-color: #3498db; /* Blue message background */
+            color: #ffffff; /* White text */
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+
+        /* Input area styles */
+        .input-area {
+            margin-top: 20px;
+        }
+
+        .input-area input[type="text"] {
+            width: calc(100% - 80px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #5dade2; /* Slightly darker pastel blue border */
+            border-radius: 5px;
+        }
+
+        .input-area button {
+            width: 60px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #2980b9; /* Darker blue button background */
+            color: #ffffff; /* White text */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .input-area button:hover {
+            background-color: #1f618d; /* Darker shade of blue on hover */
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-area">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <div class="input-area">
+            <input type="text" id="messageInput" placeholder="Enter your message">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Paste the JavaScript code here
+        const socket = new WebSocket('ws://127.0.0.1:8478'); // Replace with your server address
+
+        socket.onopen = function(event) {
+            console.log('Connected to the server');
+        };
+
+        socket.onmessage = function(event) {
+            const message = event.data;
+            // Handle received messages from the server (update UI, etc.)
+            console.log('Received message:', message);
+        };
+
+        function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value;
+            if (message.trim() !== '') {
+                socket.send(message);
+                // Clear the input field
+                messageInput.value = '';
+            } else {
+                console.log('Message cannot be empty');
+            }
+        }
+    </script>
+     <script src="script.js"></script>
+</body>
+</html>
+
+{% endblock %}
