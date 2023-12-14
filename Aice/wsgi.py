@@ -1,16 +1,16 @@
-"""
-WSGI config for Aice project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/
-"""
+# wsgi.py
 
 import os
+import sys
 
+# Add the path to your project
+path = '/path/to/your/project'
+if path not in sys.path:
+    sys.path.append(path)
+
+# Set the DJANGO_SETTINGS_MODULE
+os.environ['DJANGO_SETTINGS_MODULE'] = 'yourproject.settings'
+
+# Get the WSGI application
 from django.core.wsgi import get_wsgi_application
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Aice.settings')
-
 application = get_wsgi_application()
