@@ -1,10 +1,14 @@
-# requirement.txt
+# requirements.txt
 
 # Django packages
 Django==3.2.12
 channels==3.0.4
 channels-redis==3.3.1
 gunicorn==20.1.0
+
+# Flask packages
+Flask==2.1.1
+Flask-SocketIO==5.1.1
 
 # Other Python packages
 python-socketio==5.4.1
