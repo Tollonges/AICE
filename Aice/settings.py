@@ -70,6 +70,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Aice.wsgi.application'
 
+# Use channels layer as the default backend for Django.
+ASGI_APPLICATION = 'yourproject.routing.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
