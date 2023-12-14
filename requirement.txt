@@ -2,14 +2,10 @@
 
 # Django packages
 Django==3.2.12
-django-socketio==0.4.6
+channels==3.0.4
+channels-redis==3.3.1
 gunicorn==20.1.0
-
-# Flask packages (required for the server in the provided code)
-Flask==2.1.1
-Flask-SocketIO==5.1.1
 
 # Other Python packages
 python-socketio==5.4.1
 
-# Any other dependencies your project may need
