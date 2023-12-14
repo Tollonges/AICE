@@ -1,6 +1,6 @@
-# messaging_app/views.py
+# aicethethings/views.py
 from django.shortcuts import render
-# messaging_app/views.py
+# aicethethings/views.py
 from django.shortcuts import render, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
